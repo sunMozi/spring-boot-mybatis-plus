@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mozisun.springbootmybatisplus.mapper.AddressMapper">
+
+    <resultMap id="BaseResultMap" type="com.mozisun.springbootmybatisplus.entity.Address">
+            <id property="id" column="id" />
+            <result property="userId" column="user_id" />
+            <result property="province" column="province" />
+            <result property="city" column="city" />
+            <result property="town" column="town" />
+            <result property="mobile" column="mobile" />
+            <result property="street" column="street" />
+            <result property="contact" column="contact" />
+            <result property="isDefault" column="is_default" />
+            <result property="notes" column="notes" />
+            <result property="deleted" column="deleted" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,user_id,province,city,town,mobile,
+        street,contact,is_default,notes,deleted
+    </sql>
+</mapper>
