@@ -1,0 +1,26 @@
+# Spring Boot 应用程序配置
+spring:
+  # 应用名称，常用于注册中心或服务发现时标识
+  application:
+    name: spring-boot-mybatis-plus
+
+  # 数据源配置，用于连接数据库
+  datasource:
+    # JDBC 连接 URL，配置了数据库地址、时区、编码等参数
+    url: jdbc:mysql://localhost:3306/mp_3?useSSL=false&serverTimezone=UTC&characterEncoding=utf8
+    # 数据库用户名
+    username: root
+    # 数据库密码
+    password: 123456
+    # MySQL JDBC 驱动类名
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # 数据库初始化配置
+  sql:
+    init:
+      # 每次启动时总是执行初始化脚本，适合开发环境，生产环境应谨慎配置
+      mode: always
+      # 初始化数据库结构的 SQL 脚本路径
+      schema-locations: classpath:db/schema-mysql.sql
+      # 初始化数据库数据的 SQL 脚本路径
+      data-locations: classpath:db/data-mysql.sql
