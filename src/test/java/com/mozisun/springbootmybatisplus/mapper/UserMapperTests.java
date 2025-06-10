@@ -12,7 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * UserMapper 单元测试类
  */
 @SpringBootTest
-class UserMapperTests {
+public class UserMapperTests {
 
   @Resource
   private UserMapper userMapper;
@@ -33,6 +33,9 @@ class UserMapperTests {
   @Test
   public void selectAllTest() {
     List<User> userList = userMapper.selectList(null);
+    Assertions.assertNotNull(userList);
+    Assertions.assertFalse(userList.isEmpty());
+    Assertions.assertEquals(5, userList.size());
     System.out.println("selectList 查询所有用户结果：" + userList);
   }
 
